@@ -5,26 +5,83 @@ const images = [
   "./assets/bg1.jpg",
 ];
 
-let i = 1; //ittorator
-
 let cimg = 0; //native value of item in array
 
-const ittoratecimg = function () {
+function ittoratecimg() {
+  cimg++;
   // moves value of selected array item
-  if (i > 2) {
-    cimg = cimg + i;
-  } else
-    () => {
-      cimg = 0;
-    };
-};
+  if (cimg == images.length) {
+    cimg = 0;
+  }
+}
 
-const chbg = function (images) {
+function chbg() {
   //function to change background image
-  document.body.style.backgroundImage(images[cimg]); //cimg is the value within the array
-};
+  document.body.style.backgroundImage = "url(" + images[cimg] + ")"; //cimg is the value within the array
+  console.log(document.body.style.backgroundImage);
+}
 
-setTimeout(function () {
+let auto = true;
+
+let autoID;
+
+const start = document.getElementById("start");
+
+start.addEventListener("click", function () {
+  console.log("start");
   ittoratecimg();
   chbg();
-}, 2.0 * 1000); //  after 2 seconds
+  if (!autoID) {
+    autoID = setInterval(() => {
+      ittoratecimg();
+      chbg();
+      console.log("change");
+      console.log(cimg);
+    }, 4.8 * 1000);
+  }
+});
+
+const stop = document.getElementById("stop");
+
+stop.addEventListener("click", function () {
+  console.log("stop");
+  clearInterval(autoID);
+  autoID = null;
+});
+
+const next = document.getElementById("next");
+
+next.addEventListener("click", function () {
+  console.log("next");
+  ittoratecimg();
+  chbg();
+});
+
+const previos = document.getElementById("previos");
+
+previos.addEventListener("click", function () {
+  console.log("previos");
+  cimg--;
+  if (cimg < 0) {
+    cimg = images.length - 1;
+  }
+  chbg();
+});
+
+//setInterval(() => {
+//  ittoratecimg();
+//  chbg();
+//  console.log("change");
+//  console.log(cimg);
+//}, 4.8 * 1000);
+//  after 2 seconds
+
+let form = document.getElementById("form");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  console.log("form submitted");
+  let imageLink = document.getElementById("imageLink").value;
+  images.push(imageLink);
+  console.log(images);
+});

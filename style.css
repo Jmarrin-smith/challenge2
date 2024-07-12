@@ -1,5 +1,42 @@
 body {
-  background-image: url("./assets/bg3.jpg");
+  margin: 0%;
+  background-image: url("./assets/bg1.jpg");
   height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.z-index {
+  z-index: 1;
+}
+
+.box {
+  position: relative;
+  display: flex;
   width: 100vw;
+  top: 10px;
+}
+
+.item {
+  flex-direction: row;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+}
+
+.item1 {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 50vh;
+  right: 2%;
+}
+
+.item2 {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  top: 50vh;
+  left: 2%;
 }

@@ -10,5 +10,25 @@
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" async defer></script>
   </head>
-  <body></body>
+  <body>
+    <div class="z-index">
+      <div class="box">
+        <button id="start" class="item">start</button>
+        <button id="stop" class="item">stop</button>
+      </div>
+      <button id="next" class="item1">next</button>
+      <button id="previos" class="item2">previos</button>
+
+      <form action="/my-handling-form-page" method="post" id="form">
+        <label for="imageLink">image link:</label>
+        <input
+          type="text"
+          id="imageLink"
+          name="img-Link"
+          placeholder="cool-image.web/file.value"
+        />
+        <input type="submit" value="enter" />
+      </form>
+    </div>
+  </body>
 </html>
