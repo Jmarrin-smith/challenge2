@@ -1,8 +1,8 @@
 const images = [
   //array of images
-  "./assets/bg3.jpg",
-  "./assets/bg2.jpg",
-  "./assets/bg1.jpg",
+  "./assets/bg1.webp",
+  "./assets/bg2.webp",
+  "./assets/bg3.webp",
 ];
 
 let cimg = 0; //native value of item in array
