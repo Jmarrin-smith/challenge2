@@ -17,8 +17,9 @@ function ittoratecimg() {
 
 function chbg() {
   //function to change background image
-  document.body.style.backgroundImage = "url(" + images[cimg] + ")"; //cimg is the value within the array
-  console.log(document.body.style.backgroundImage);
+  const changeimage = document.getElementById("my-image"); //cimg is the value within the array
+  console.log(changeimage);
+  changeimage.src = images[cimg];
 }
 
 let auto = true;
