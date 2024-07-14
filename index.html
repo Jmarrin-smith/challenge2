@@ -11,7 +11,7 @@
     <script src="app.js" async defer></script>
   </head>
   <body>
-    <div class="z-index" id="hide">
+    <div class="z-index" id="hide" aria-hidden="false">
       <button
         class="hidebtn"
         id="hidebtn"
@@ -20,11 +20,31 @@
         hide<br />(any key)
       </button>
       <div class="box">
-        <button id="start" class="item">start</button>
-        <button id="stop" class="item">stop</button>
+        <button
+          id="start"
+          class="item"
+          aria-label="click to start autoscroll of images"
+        >
+          start
+        </button>
+        <button
+          id="stop"
+          class="item"
+          aria-label="click to stop autoscroll of images"
+        >
+          stop
+        </button>
       </div>
-      <button id="next" class="item1">next</button>
-      <button id="previos" class="item2">previos</button>
+      <button id="next" class="item1" aria-label="click to move to next image">
+        next
+      </button>
+      <button
+        id="previos"
+        class="item2"
+        aria-label="click to move to previos image"
+      >
+        previos
+      </button>
 
       <form action="/my-handling-form-page" method="post" id="form">
         <label for="imageLink">image link:</label>
@@ -33,10 +53,19 @@
           id="imageLink"
           name="img-Link"
           placeholder="cool-image.web/file.value"
+          aria-label="write a weblink to an image here to add to gallary"
         />
-        <input type="submit" value="enter" />
+        <input
+          type="submit"
+          value="enter"
+          aria-label="click to enter the weblink"
+        />
       </form>
     </div>
-    <img src="./assets/bg3.jpg" id="my-image" />
+    <img
+      src="./assets/bg3.jpg"
+      id="my-image"
+      alt="image inspected in gallary"
+    />
   </body>
 </html>
