@@ -86,3 +86,26 @@ form.addEventListener("submit", function (event) {
   images.push(imageLink);
   console.log(images);
 });
+
+function hideshow() {
+  var x = document.getElementById("hide");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    console.log("show");
+  } else {
+    x.style.display = "none";
+    console.log("hide");
+  }
+}
+
+const hidebtn = document.getElementById("hidebtn");
+
+hidebtn.addEventListener("click", function () {
+  console.log("hide-btn");
+  hideshow();
+});
+
+addEventListener("keyup", function () {
+  console.log("hide-btn");
+  hideshow();
+});
